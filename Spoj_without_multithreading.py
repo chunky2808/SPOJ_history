@@ -4,7 +4,9 @@ import collections
 from datetime import datetime
 
 startTime = datetime.now()
-quote_page = "http://www.spoj.com/users/chunky_2808/"
+
+quote_page = "http://www.spoj.com/users/chunky_2808/" #Replace it with your user name
+
 page = urllib2.urlopen(quote_page)
 soup = BeautifulSoup(page, "html.parser")
 
@@ -28,7 +30,7 @@ for name_question in name_question:
 	if name_question == '':
 		a =1
 	else:
-		quote_page = "http://www.spoj.com/status/%s,chunky_2808//"%name_question
+		quote_page = "http://www.spoj.com/status/%s,chunky_2808//"%name_question #Replace it with your user name
 		page = urllib2.urlopen(quote_page)
 		soup = BeautifulSoup(page, "html.parser")
 		name_box  = soup.find_all("td", class_="status_sm")[-1]
